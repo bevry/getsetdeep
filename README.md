@@ -1,6 +1,5 @@
-# Balupton's Utility Functions [![Build Status](https://secure.travis-ci.org/balupton/bal-util.png?branch=master)](http://travis-ci.org/balupton/bal-util)
-Common utility functions for Node.js used and maintained by Benjamin Lupton
-
+# Get Set Deep [![Build Status](https://secure.travis-ci.org/bevry/getsetdeep.png?branch=master)](http://travis-ci.org/bevry/getsetdeep)
+Get and set nested variables of an object, includes support for Backbone Models
 
 
 ## Install
@@ -8,36 +7,50 @@ Common utility functions for Node.js used and maintained by Benjamin Lupton
 ### Backend
 
 1. [Install Node.js](http://bevry.me/node/install)
-2. `npm install --save bal-util`
+2. `npm install --save getsetdeep`
 
 ### Frontend
 
-1. [See Browserify](http://browserify.org/)
+1. [See Browserify](http://browserify.org)
 
 
 
 ## Usage
-Best off looking at source, it's well documented, and there are plenty of tests
+
+### Example
+
+``` javascript
+// Import
+var getsetdeep = require('getsetdeep')
+
+// Prepare
+var obj = {
+	a: {
+		b: {
+			c: 3
+		}
+	}
+}
+
+// Get
+getsetdeep.getDeep(obj, 'a.b.c')     // returns 3
+getsetdeep.setDeep(obj, 'a.b.c', 4)  // returns 4
+getsetdeep.getDeep(obj, 'a.b.c')     // returns 4
+```
 
 
+### Notes
 
-## Future
-We're in the process of abstracting the pieces of bal-util out into their own modules. So far, we've done the following:
-
-- balUtilFlow.Group > [TaskGroup](https://github.com/bevry/taskgroup)
-- balUtilFlow.fireWithOptionalCallback > [ambi](https://github.com/bevry/ambi)
-- balUtilTypes > [typeChecker](https://github.com/bevry/typechecker)
-- balUtilFlow.safeCallback > [safeCallback](https://github.com/bevry/safecallback)
-
-More to come.
-
+- `setDeep` also has a fourth argument called `setOnlyIfEmpty` which defaults to `false`, if specified to `true` then `setDeep` will only set the value if the current value is `null` or `undefined`
+- We also work with Backbone Models (or rather any model that utilizes an `attributes` object)
 
 
 ## History
-You can discover the history inside the [History.md](https://github.com/balupton/bal-util/blob/master/History.md#files) file
+You can discover the history inside the [History.md](https://github.com/bevry/getsetdeep/blob/master/History.md#files) file
 
 
 
 ## License
 Licensed under the incredibly [permissive](http://en.wikipedia.org/wiki/Permissive_free_software_licence) [MIT License](http://creativecommons.org/licenses/MIT/)
-<br/>Copyright © 2011+ [Benjamin Arthur Lupton](http://balupton.com)
+<br/>Copyright © 2013+ [Bevry Pty Ltd](http://bevry.me)
+<br/>Copyright © 2011-2012 [Benjamin Arthur Lupton](http://balupton.com)
