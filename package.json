@@ -28,7 +28,8 @@
 	},
 	"devDependencies": {
 		"coffee-script": "~1.6.2",
-		"joe": "~1.1.2"
+		"joe": "~1.2.0",
+		"joe-reporter-console": "~1.2.1"
 	},
 	"directories": {
 		"lib": "./out/lib"

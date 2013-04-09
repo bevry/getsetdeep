@@ -1,4 +1,9 @@
-# Get Set Deep [![Build Status](https://secure.travis-ci.org/bevry/getsetdeep.png?branch=master)](http://travis-ci.org/bevry/getsetdeep)
+# Get Set Deep
+
+[![Build Status](https://secure.travis-ci.org/bevry/getsetdeep.png?branch=master)](http://travis-ci.org/bevry/getsetdeep)
+[![NPM version](https://badge.fury.io/js/getsetdeep.png)](https://npmjs.org/package/getsetdeep)
+[![Flattr this project](http://api.flattr.com/button/flattr-badge-large.png)](http://flattr.com/thing/344188/balupton-on-Flattr)
+
 Get and set nested variables of an object, includes support for Backbone Models
 
 
