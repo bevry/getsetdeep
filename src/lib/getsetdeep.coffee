@@ -4,55 +4,61 @@ typeChecker = require('typechecker')
 # Define
 getsetdeep =
 	# Get Deep
-	getDeep: (location,keys) ->
-		# Prepare
-		keys = keys.split('.')  unless typeChecker.isArray(keys)
+	getDeep: (item,keys) ->
+		# Split keys if they are a string
+		keys = keys.split('.')  if typeChecker.isString(keys)
 
-		# Check
-		if keys.length is 0 or typeof location is 'undefined'
-			result = undefined
-		else if location is null
-			result = null
-		else
-			key = keys[0]
-			location = location.attributes ? location
-			location = if typeof location[key] is 'undefined' then undefined else location[key]
-			if keys.length is 1
-				result = location
-			else
-				result = @getDeep(location, keys[1...])
+		# Return if we have no keys
+		return undefined  if keys.length is 0
+
+		# Return if we have no object
+		return undefined  unless item
+
+		# Return if we are not a delveable type like object or function
+		return undefined  unless typeChecker.isObject(item) or typeChecker.isFunction(item)
+
+		# Get the deepmost item
+		for key in keys.slice(0,-1)
+			item = @getDeep(item,key)
+			return undefined  unless item
+
+		# We've gotten the deepmost item, get the value now
+		key = keys.slice(-1)[0]
+		result = (if item.get? then item.get(key) else item[key])
 
 		# Return
 		return result
 
+
 	# Set Deep
-	setDeep: (location,keys,value,onlyIfEmpty=false) ->
+	setDeep: (item,keys,value,opts={}) ->
 		# Prepare
-		keys = keys.split('.')  unless typeChecker.isArray(keys)
+		opts.onlyIfEmpty ?= false
+
+		# Split keys if they are a string
+		keys = keys.split('.')  if typeChecker.isString(keys)
 
 		# Check
 		return undefined  if keys.length is 0
 
-		# Check
-		if keys.length is 0 or typeof location is 'undefined'
-			result = undefined
-		else if location is null
-			result = null
-		else
-			key = keys[0]
-			location = location.attributes ? location
-			if keys.length is 1
-				if onlyIfEmpty
-					location[key] ?= value
-				else
-					if typeof value is 'undefined'
-						delete location[key]  if typeof location[key] isnt 'undefined'
-					else
-						location[key] = value
-				result = location[key]
+		# Get the deepmost item
+		for key in keys.slice(0,-1)
+			item = @getDeep(item,key)
+			item = @setDeep(item,key,{},opts)  unless item
+
+		# We've gotten the deepmost item, set the value now
+		key = keys.slice(-1)[0]
+		result = @getDeep(item,key)
+		if (opts.onlyIfEmpty and result?) is false
+			if item.set?
+				attrs = {}
+				attrs[key] = value
+				item.set(attrs,opts)
 			else
-				location = location[key] ?= {}
-				result = @setDeep(location, keys[1...], value, onlyIfEmpty)
+				item[key] = value
+
+		# Fetch the actual applied value, could be different than what we set
+		result = @getDeep(item,key)
 
 		# Return
 		return result

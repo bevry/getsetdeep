@@ -27,6 +27,7 @@
 		"typechecker": "~2.0.1"
 	},
 	"devDependencies": {
+		"backbone": "~1.0.0",
 		"coffee-script": "~1.6.2",
 		"joe": "~1.2.0",
 		"joe-reporter-console": "~1.2.1"

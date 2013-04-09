@@ -1,46 +1,90 @@
 # Import
-assert = require('assert')
+{expect} = require('chai')
 joe = require('joe')
 balUtil = require('../lib/getsetdeep')
+Backbone = require('backbone')
 
 # Test
 joe.describe 'getsetdeep', (describe,it) ->
 
-	it 'should getdeep correctly', (done) ->
+	describe 'getdeep', (describe,it) ->
 		# Prepare
 		src =
 			a:
-				b:
-					attributes:
-						c: 1
+				nullable: null
+				b: new Backbone.Model({
+					c: 1
+				})
 
-		expected = 1
-		actual = balUtil.getDeep(src,'a.b.c')
-		assert.equal(expected, actual, 'out value was as expected')
+		it 'get existing value', ->
+			expect(
+				balUtil.getDeep(src, 'a.b.c')
+			).to.eql(1)
 
-		actual = balUtil.getDeep(src,'a.b.unknown')
-		assert.ok(typeof actual is 'undefined', 'undefined value was as expected')
+		it 'get null value', ->
+			expect(
+				balUtil.getDeep(src, 'a.nullable')
+			).to.eql(null)
 
-		done()
+		it 'get undefined value', ->
+			expect(
+				balUtil.getDeep(src, 'a.unknown')
+			).to.not.exist
 
-	it 'should setdeep correctly', (done) ->
+	describe 'setdeep', (describe,it) ->
 		# Prepare
 		src =
 			a:
-				unknown: 'asd'
-				b:
-					attributes:
-						c: 1
+				b: new Backbone.Model({
+					c: 1
+				})
 
-		expected =
-			a:
-				b:
-					attributes:
-						c: 2
+		it 'set existing value', ->
+			expect(
+				balUtil.setDeep(src, 'a.b.c', 2)
+			).to.eql(2)
+			expect(
+				balUtil.getDeep(src, 'a.b.c')
+			).to.eql(2)
 
-		balUtil.setDeep(src,'a.unknown',undefined)
-		balUtil.setDeep(src,'a.b.c',2)
+		it 'set undefined value', ->
+			expect(
+				balUtil.setDeep(src, 'a.unknown', 3)
+			).to.eql(3)
+			expect(
+				balUtil.getDeep(src, 'a.unknown')
+			).to.eql(3)
 
-		assert.deepEqual(expected, src, 'out value was as expected')
+		it 'set existing value only if empty', ->
+			expect(
+				balUtil.setDeep(src, 'a.b.c', 3, {onlyIfEmpty:true})
+			).to.eql(2)
+			expect(
+				balUtil.getDeep(src, 'a.b.c')
+			).to.eql(2)
 
-		done()
+		it 'set undefined value only if empty', ->
+			expect(
+				balUtil.setDeep(src, 'a.b.asdsadasd', 3, {onlyIfEmpty:true})
+			).to.eql(3)
+			expect(
+				balUtil.getDeep(src, 'a.b.asdsadasd')
+			).to.eql(3)
+
+		it 'set value to undefined', ->
+			expect(
+				balUtil.setDeep(src, 'a.unknown', undefined)
+			).to.not.exist
+			expect(
+				balUtil.getDeep(src, 'a.unknown')
+			).to.not.exist
+
+		it 'set value to null', ->
+			expect(
+				balUtil.setDeep(src, 'a.unknown', null)
+			).to.eql(null)
+			expect(
+				balUtil.getDeep(src, 'a.unknown')
+			).to.eql(null)
+
+
