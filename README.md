@@ -26,7 +26,7 @@ Get and set nested variables of an object, includes support for Backbone Models
 
 ``` javascript
 // Import
-var getsetdeep = require('getsetdeep')
+var getsetdeep = require('getsetdeep');
 
 // Prepare
 var obj = {
@@ -35,19 +35,20 @@ var obj = {
 			c: 3
 		}
 	}
-}
+};
 
 // Get
-getsetdeep.getDeep(obj, 'a.b.c')     // returns 3
-getsetdeep.setDeep(obj, 'a.b.c', 4)  // returns 4
-getsetdeep.getDeep(obj, 'a.b.c')     // returns 4
+console.log(getsetdeep.getDeep(obj, 'a.b.c'));     // 3
+console.log(getsetdeep.setDeep(obj, 'a.b.c', 4));  // 4
+console.log(getsetdeep.getDeep(obj, 'a.b.c'));     // 4
 ```
 
 
 ### Notes
 
-- `setDeep` also has a fourth argument called `setOnlyIfEmpty` which defaults to `false`, if specified to `true` then `setDeep` will only set the value if the current value is `null` or `undefined`
-- We also work with Backbone Models (or rather any model that utilizes an `attributes` object)
+- `setDeep` also has a fourth argument `opts` for options, currently we support the options:
+	- `onlyIfEmpty` defaults to `false`, if specified to `true` then `setDeep` will only set the value if the current value is `null` or `undefined`
+- We also work with getters `get(key)` and setters `set(attrs,opts)`, enabling support for Backbone.js models as well as others
 
 
 ## History

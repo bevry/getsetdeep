@@ -15,10 +15,16 @@ joe.describe 'getsetdeep', (describe,it) ->
 				b: new Backbone.Model({
 					c: 1
 				})
+			d: 1
 
-		it 'get existing value', ->
+		it 'get existing nested value', ->
 			expect(
 				balUtil.getDeep(src, 'a.b.c')
+			).to.eql(1)
+
+		it 'get existing non-nested value', ->
+			expect(
+				balUtil.getDeep(src, 'd')
 			).to.eql(1)
 
 		it 'get null value', ->
@@ -29,6 +35,14 @@ joe.describe 'getsetdeep', (describe,it) ->
 		it 'get undefined value', ->
 			expect(
 				balUtil.getDeep(src, 'a.unknown')
+			).to.not.exist
+
+		it 'get value from undefined', ->
+			expect(
+				balUtil.getDeep(undefined, 'blah')
+			).to.not.exist
+			expect(
+				balUtil.getDeep(null, 'blah')
 			).to.not.exist
 
 	describe 'setdeep', (describe,it) ->
