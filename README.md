@@ -67,31 +67,29 @@ Get and set nested variables of an object, includes support for Backbone Models
 
 ### Example
 
-``` javascript
+```javascript
 // Import
-const getsetdeep = require('getsetdeep');
+const getsetdeep = require('getsetdeep')
 
 // Prepare
 const obj = {
-	a: {
-		b: {
-			c: 3
-		}
-	}
-};
+    a: {
+        b: {
+            c: 3
+        }
+    }
+}
 
 // Get
-console.log(getsetdeep.getDeep(obj, 'a.b.c'));     // 3
-console.log(getsetdeep.setDeep(obj, 'a.b.c', 4));  // 4
-console.log(getsetdeep.getDeep(obj, 'a.b.c'));     // 4
+console.log(getsetdeep.getDeep(obj, 'a.b.c')) // 3
+console.log(getsetdeep.setDeep(obj, 'a.b.c', 4)) // 4
+console.log(getsetdeep.getDeep(obj, 'a.b.c')) // 4
 ```
-
 
 ### Notes
 
-- `setDeep` also has a fourth argument `opts` for options, currently we support the options:
-	- `onlyIfEmpty` defaults to `false`, if specified to `true` then `setDeep` will only set the value if the current value is `null` or `undefined`
-- We also work with getters `get(key)` and setters `set(attrs,opts)`, enabling support for Backbone.js models as well as others
+-   `setDeep` also has a fourth argument `opts` for options, currently we support the options: - `onlyIfEmpty` defaults to `false`, if specified to `true` then `setDeep` will only set the value if the current value is `null` or `undefined`
+-   We also work with getters `get(key)` and setters `set(attrs,opts)`, enabling support for Backbone.js models as well as others
 
 <!-- HISTORY/ -->
 
