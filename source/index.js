@@ -6,7 +6,7 @@ const typeChecker = require('typechecker')
 // Define
 const getsetdeep = {
 	// Get Deep
-	getDeep (item, keys) {
+	getDeep(item, keys) {
 		// Split keys if they are a string
 		if (typeChecker.isString(keys)) {
 			keys = keys.split('.')
@@ -38,18 +38,14 @@ const getsetdeep = {
 
 		// We've gotten the deepmost item, get the value now
 		const key = keys[keys.length - 1]
-		const result =
-			item.get != null
-				? item.get(key)
-				: item[key]
+		const result = item.get != null ? item.get(key) : item[key]
 
 		// Return
 		return result
 	},
 
-
 	// Set Deep
-	setDeep (item, keys, value, opts = {}) {
+	setDeep(item, keys, value, opts = {}) {
 		// Prepare
 		if (opts.onlyIfEmpty == null) {
 			opts.onlyIfEmpty = false
@@ -71,8 +67,7 @@ const getsetdeep = {
 			const tmp = this.getDeep(item, key)
 			if (tmp) {
 				item = tmp
-			}
-			else {
+			} else {
 				item = this.setDeep(item, key, {}, opts)
 			}
 		}
@@ -85,8 +80,7 @@ const getsetdeep = {
 				const attrs = {}
 				attrs[key] = value
 				item.set(attrs, opts)
-			}
-			else {
+			} else {
 				item[key] = value
 			}
 		}
