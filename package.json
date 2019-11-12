@@ -1,6 +1,6 @@
 {
   "name": "getsetdeep",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "Get and set nested variables of an object, includes support for Backbone Models",
   "homepage": "https://github.com/bevry/getsetdeep",
   "license": "MIT",
@@ -25,8 +25,6 @@
       "patreon",
       "flattr",
       "liberapay",
-      "thanksapp",
-      "boostlab",
       "buymeacoffee",
       "opencollective",
       "crypto",
@@ -41,9 +39,11 @@
       "opencollectiveUsername": "bevry",
       "patreonUsername": "bevry",
       "paypalURL": "https://bevry.me/paypal",
-      "wishlistURL": "https://bevry.me/wishlist"
+      "wishlistURL": "https://bevry.me/wishlist",
+      "travisTLD": "com"
     }
   },
+  "funding": "https://bevry.me/fund",
   "author": "Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
   "maintainers": [
     "Benjamin Lupton <b@lupton.cc> (http://balupton.com)"
@@ -73,7 +73,7 @@
         "require"
       ],
       "engines": {
-        "node": "8 || 10 || 11 || 12",
+        "node": "8 || 10 || 12 || 13",
         "browsers": false
       }
     },
@@ -94,22 +94,22 @@
   "main": "source/index.js",
   "browser": "edition-browsers/index.js",
   "dependencies": {
-    "typechecker": "~4.7.0"
+    "typechecker": "~4.9.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.6.0",
-    "@babel/core": "^7.6.0",
-    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
-    "@babel/preset-env": "^7.6.0",
-    "assert-helpers": "^4.9.6",
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.7.2",
+    "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
+    "@babel/preset-env": "^7.7.1",
+    "assert-helpers": "^5.2.1",
     "backbone": "~1.4.0",
-    "eslint": "^6.3.0",
+    "eslint": "^6.6.0",
     "eslint-config-bevry": "^1.2.1",
-    "eslint-config-prettier": "^6.2.0",
-    "eslint-plugin-prettier": "^3.1.0",
-    "kava": "^3.1.0",
-    "prettier": "^1.18.2",
-    "projectz": "^1.7.4",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "kava": "^3.2.0",
+    "prettier": "^1.19.1",
+    "projectz": "^1.9.0",
     "valid-directory": "^1.0.0"
   },
   "scripts": {
