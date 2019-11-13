@@ -4,7 +4,7 @@
 // Import
 const { equal } = require('assert-helpers')
 const kava = require('kava')
-const balUtil = require('../')
+const balUtil = require('./')
 const Backbone = require('backbone')
 
 // Test
