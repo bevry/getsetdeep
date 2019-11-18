@@ -1,6 +1,6 @@
 {
   "name": "getsetdeep",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "description": "Get and set nested variables of an object, includes support for Backbone Models",
   "homepage": "https://github.com/bevry/getsetdeep",
   "license": "MIT",
@@ -50,7 +50,8 @@
   ],
   "contributors": [
     "Benjamin Lupton <b@lupton.cc> (http://balupton.com)",
-    "Sean Fridman <mail@seanfridman.com> (http://seanfridman.com)"
+    "Sean Fridman <mail@seanfridman.com> (http://seanfridman.com)",
+    "dependabot-preview[bot] (http://github.com/apps/dependabot-preview)"
   ],
   "bugs": {
     "url": "https://github.com/bevry/getsetdeep/issues"
@@ -73,7 +74,7 @@
         "require"
       ],
       "engines": {
-        "node": "8 || 10 || 12 || 13",
+        "node": "8 || 10 || 12",
         "browsers": false
       }
     },
@@ -94,23 +95,23 @@
   "main": "source/index.js",
   "browser": "edition-browsers/index.js",
   "dependencies": {
-    "typechecker": "~4.9.0"
+    "typechecker": "~4.10.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.0",
     "@babel/core": "^7.7.2",
     "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
     "@babel/preset-env": "^7.7.1",
-    "assert-helpers": "^5.2.1",
+    "assert-helpers": "5.4.0",
     "backbone": "~1.4.0",
     "eslint": "^6.6.0",
     "eslint-config-bevry": "^1.2.1",
-    "eslint-config-prettier": "^6.5.0",
+    "eslint-config-prettier": "^6.6.0",
     "eslint-plugin-prettier": "^3.1.1",
-    "kava": "^3.2.0",
+    "kava": "4.0.0",
     "prettier": "^1.19.1",
-    "projectz": "^1.9.0",
-    "valid-directory": "^1.0.0"
+    "projectz": "^1.10.0",
+    "valid-directory": "^1.1.1"
   },
   "scripts": {
     "our:clean": "rm -Rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
