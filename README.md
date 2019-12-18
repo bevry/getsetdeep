@@ -33,42 +33,15 @@ Get and set nested variables of an object, includes support for Backbone Models
 <!-- /DESCRIPTION -->
 
 
-<!-- INSTALL/ -->
-
-<h2>Install</h2>
-
-<a href="https://npmjs.com" title="npm is a package manager for javascript"><h3>npm</h3></a>
-<ul>
-<li>Install: <code>npm install --save getsetdeep</code></li>
-<li>Require: <code>require('getsetdeep')</code></li>
-</ul>
-
-<a href="https://jspm.io" title="Native ES Modules CDN"><h3>jspm</h3></a>
-
-``` html
-<script type="module">
-    import * as pkg from '//dev.jspm.io/getsetdeep'
-</script>
-```
-
-<h3><a href="https://editions.bevry.me" title="Editions are the best way to produce and consume packages you care about.">Editions</a></h3>
-
-<p>This package is published with the following editions:</p>
-
-<ul><li><code>getsetdeep</code> aliases <code>getsetdeep/source/index.js</code></li>
-<li><code>getsetdeep/source/index.js</code> is esnext source code with require for modules</li>
-<li><code>getsetdeep/edition-browsers/index.js</code> is esnext compiled for browsers with require for modules</li></ul>
-
-<!-- /INSTALL -->
-
-
 ## Usage
+
+[Complete API Documentation.](http://master.getsetdeep.bevry.surge.sh/docs/)
 
 ### Example
 
 ```javascript
 // Import
-const getsetdeep = require('getsetdeep')
+import { setDeep, getDeep } from 'getsetdeep'
 
 // Prepare
 const obj = {
@@ -80,15 +53,63 @@ const obj = {
 }
 
 // Get
-console.log(getsetdeep.getDeep(obj, 'a.b.c')) // 3
-console.log(getsetdeep.setDeep(obj, 'a.b.c', 4)) // 4
-console.log(getsetdeep.getDeep(obj, 'a.b.c')) // 4
+console.log(getDeep(obj, 'a.b.c')) // 3
+console.log(setDeep(obj, 'a.b.c', 4)) // 4
+console.log(getDeep(obj, 'a.b.c')) // 4
 ```
 
 ### Notes
 
--   `setDeep` also has a fourth argument `opts` for options, currently we support the options: - `onlyIfEmpty` defaults to `false`, if specified to `true` then `setDeep` will only set the value if the current value is `null` or `undefined`
--   We also work with getters `get(key)` and setters `set(attrs,opts)`, enabling support for Backbone.js models as well as others
+-   `setDeep` also has a fourth argument `opts` for options, currently we support the options:
+    -   `onlyIfEmpty` defaults to `false`, if specified to `true` then `setDeep` will only set the value if the current value is `null` or `undefined`
+-   We also work with getters `get(key)` and setters `set(attrs, opts)`, enabling support for Backbone.js models as well as others
+
+<!-- INSTALL/ -->
+
+<h2>Install</h2>
+
+<a href="https://npmjs.com" title="npm is a package manager for javascript"><h3>npm</h3></a>
+<ul>
+<li>Install: <code>npm install --save getsetdeep</code></li>
+<li>Import: <code>import * as pkg from ('getsetdeep')</code></li>
+<li>Require: <code>const pkg = require('getsetdeep')</code></li>
+</ul>
+
+<a href="https://www.pika.dev/cdn" title="100% Native ES Modules CDN"><h3>pika</h3></a>
+
+``` html
+<script type="module">
+    import * as pkg from '//cdn.pika.dev/getsetdeep/^3.7.0'
+</script>
+```
+
+<a href="https://unpkg.com" title="unpkg is a fast, global content delivery network for everything on npm"><h3>unpkg</h3></a>
+
+``` html
+<script type="module">
+    import * as pkg from '//unpkg.com/getsetdeep@^3.7.0'
+</script>
+```
+
+<a href="https://jspm.io" title="Native ES Modules CDN"><h3>jspm</h3></a>
+
+``` html
+<script type="module">
+    import * as pkg from '//dev.jspm.io/getsetdeep@3.7.0'
+</script>
+```
+
+<h3><a href="https://editions.bevry.me" title="Editions are the best way to produce and consume packages you care about.">Editions</a></h3>
+
+<p>This package is published with the following editions:</p>
+
+<ul><li><code>getsetdeep/source/index.ts</code> is <a href="https://www.typescriptlang.org/" title="TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. ">TypeScript</a> source code with <a href="https://babeljs.io/docs/learn-es2015/#modules" title="ECMAScript Modules">Import</a> for modules</li>
+<li><code>getsetdeep/edition-browsers/index.js</code> is <a href="https://www.typescriptlang.org/" title="TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. ">TypeScript</a> compiled against <a href="https://en.wikipedia.org/wiki/ECMAScript#ES.Next" title="ECMAScript Next">ESNext</a> for web browsers with <a href="https://babeljs.io/docs/learn-es2015/#modules" title="ECMAScript Modules">Import</a> for modules</li>
+<li><code>getsetdeep</code> aliases <code>getsetdeep/edition-esnext/index.js</code></li>
+<li><code>getsetdeep/edition-esnext/index.js</code> is <a href="https://www.typescriptlang.org/" title="TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. ">TypeScript</a> compiled against <a href="https://en.wikipedia.org/wiki/ECMAScript#ES.Next" title="ECMAScript Next">ESNext</a> for <a href="https://nodejs.org" title="Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine">Node.js</a> with <a href="https://nodejs.org/dist/latest-v5.x/docs/api/modules.html" title="Node/CJS Modules">Require</a> for modules</li></ul>
+
+<!-- /INSTALL -->
+
 
 <!-- HISTORY/ -->
 

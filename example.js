@@ -1,7 +1,7 @@
 'use strict'
 
 // Import
-const getsetdeep = require('./')
+const { setDeep, getDeep } = require('./')
 
 // Prepare
 const obj = {
@@ -13,6 +13,6 @@ const obj = {
 }
 
 // Get
-console.log(getsetdeep.getDeep(obj, 'a.b.c'))     // 3
-console.log(getsetdeep.setDeep(obj, 'a.b.c', 4))  // 4
-console.log(getsetdeep.getDeep(obj, 'a.b.c'))     // 4
+console.log(getDeep(obj, 'a.b.c')) // 3
+console.log(setDeep(obj, 'a.b.c', 4)) // 4
+console.log(getDeep(obj, 'a.b.c')) // 4
