@@ -35,7 +35,7 @@ Get and set nested variables of an object, includes support for Backbone Models
 
 ## Usage
 
-[Complete API Documentation.](http://master.getsetdeep.bevry.surge.sh/docs/)
+[Complete API Documentation.](http://master.getsetdeep.bevry.surge.sh/docs/globals.html)
 
 ### Example
 
@@ -47,9 +47,9 @@ import { setDeep, getDeep } from 'getsetdeep'
 const obj = {
     a: {
         b: {
-            c: 3
-        }
-    }
+            c: 3,
+        },
+    },
 }
 
 // Get
@@ -79,7 +79,7 @@ console.log(getDeep(obj, 'a.b.c')) // 4
 
 ``` html
 <script type="module">
-    import * as pkg from '//cdn.pika.dev/getsetdeep/^3.7.0'
+    import * as pkg from '//cdn.pika.dev/getsetdeep/^4.0.0'
 </script>
 ```
 
@@ -87,7 +87,7 @@ console.log(getDeep(obj, 'a.b.c')) // 4
 
 ``` html
 <script type="module">
-    import * as pkg from '//unpkg.com/getsetdeep@^3.7.0'
+    import * as pkg from '//unpkg.com/getsetdeep@^4.0.0'
 </script>
 ```
 
@@ -95,7 +95,7 @@ console.log(getDeep(obj, 'a.b.c')) // 4
 
 ``` html
 <script type="module">
-    import * as pkg from '//dev.jspm.io/getsetdeep@3.7.0'
+    import * as pkg from '//dev.jspm.io/getsetdeep@4.0.0'
 </script>
 ```
 
@@ -104,9 +104,9 @@ console.log(getDeep(obj, 'a.b.c')) // 4
 <p>This package is published with the following editions:</p>
 
 <ul><li><code>getsetdeep/source/index.ts</code> is <a href="https://www.typescriptlang.org/" title="TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. ">TypeScript</a> source code with <a href="https://babeljs.io/docs/learn-es2015/#modules" title="ECMAScript Modules">Import</a> for modules</li>
-<li><code>getsetdeep/edition-browsers/index.js</code> is <a href="https://www.typescriptlang.org/" title="TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. ">TypeScript</a> compiled against <a href="https://en.wikipedia.org/wiki/ECMAScript#ES.Next" title="ECMAScript Next">ESNext</a> for web browsers with <a href="https://babeljs.io/docs/learn-es2015/#modules" title="ECMAScript Modules">Import</a> for modules</li>
 <li><code>getsetdeep</code> aliases <code>getsetdeep/edition-esnext/index.js</code></li>
-<li><code>getsetdeep/edition-esnext/index.js</code> is <a href="https://www.typescriptlang.org/" title="TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. ">TypeScript</a> compiled against <a href="https://en.wikipedia.org/wiki/ECMAScript#ES.Next" title="ECMAScript Next">ESNext</a> for <a href="https://nodejs.org" title="Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine">Node.js</a> with <a href="https://nodejs.org/dist/latest-v5.x/docs/api/modules.html" title="Node/CJS Modules">Require</a> for modules</li></ul>
+<li><code>getsetdeep/edition-esnext/index.js</code> is <a href="https://www.typescriptlang.org/" title="TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. ">TypeScript</a> compiled against <a href="https://en.wikipedia.org/wiki/ECMAScript#ES.Next" title="ECMAScript Next">ESNext</a> for <a href="https://nodejs.org" title="Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine">Node.js</a> with <a href="https://nodejs.org/dist/latest-v5.x/docs/api/modules.html" title="Node/CJS Modules">Require</a> for modules</li>
+<li><code>getsetdeep/edition-browsers/index.js</code> is <a href="https://www.typescriptlang.org/" title="TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. ">TypeScript</a> compiled against <a href="https://en.wikipedia.org/wiki/ECMAScript#10th_Edition_-_ECMAScript_2019" title="ECMAScript ES2019">ES2019</a> for web browsers with <a href="https://babeljs.io/docs/learn-es2015/#modules" title="ECMAScript Modules">Import</a> for modules</li></ul>
 
 <!-- /INSTALL -->
 

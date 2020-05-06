@@ -7,9 +7,9 @@ const { setDeep, getDeep } = require('./')
 const obj = {
 	a: {
 		b: {
-			c: 3
-		}
-	}
+			c: 3,
+		},
+	},
 }
 
 // Get
