@@ -79,7 +79,7 @@ console.log(getDeep(obj, 'a.b.c')) // 4
 
 ``` html
 <script type="module">
-    import * as pkg from '//cdn.pika.dev/getsetdeep/^4.3.0'
+    import * as pkg from '//cdn.pika.dev/getsetdeep/^4.4.0'
 </script>
 ```
 
@@ -87,7 +87,7 @@ console.log(getDeep(obj, 'a.b.c')) // 4
 
 ``` html
 <script type="module">
-    import * as pkg from '//unpkg.com/getsetdeep@^4.3.0'
+    import * as pkg from '//unpkg.com/getsetdeep@^4.4.0'
 </script>
 ```
 
@@ -95,7 +95,7 @@ console.log(getDeep(obj, 'a.b.c')) // 4
 
 ``` html
 <script type="module">
-    import * as pkg from '//dev.jspm.io/getsetdeep@4.3.0'
+    import * as pkg from '//dev.jspm.io/getsetdeep@4.4.0'
 </script>
 ```
 
