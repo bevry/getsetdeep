@@ -139,7 +139,7 @@
   "browser": "edition-browsers/index.js",
   "module": "edition-browsers/index.js",
   "dependencies": {
-    "typechecker": "7.5.0"
+    "typechecker": "7.9.0"
   },
   "devDependencies": {
     "@bevry/update-contributors": "^1.9.0",
