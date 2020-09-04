@@ -4,7 +4,7 @@
 // Import
 import { equal } from 'assert-helpers'
 import kava from 'kava'
-import { getDeep, setDeep } from './'
+import { getDeep, setDeep } from './index.js'
 import { Model } from 'backbone'
 
 // Test
