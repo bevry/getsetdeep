@@ -64,6 +64,11 @@ console.log(getDeep(obj, 'a.b.c')) // 4
     -   `onlyIfEmpty` defaults to `false`, if specified to `true` then `setDeep` will only set the value if the current value is `null` or `undefined`
 -   We also work with getters `get(key)` and setters `set(attrs, opts)`, enabling support for Backbone.js models as well as others
 
+### Security
+
+To satisfy the egos of some security researchers, just as you wouldn't do `obj[prompt('some user input')] = 'value'` don't do `setDeep(prompt('some user input'), 'value')`, [obviously](https://medium.com/intrinsic/javascript-prototype-poisoning-vulnerabilities-in-the-wild-7bc15347c96). Rather than `getsetdeep` preventing `__proto__` access, we assume the consumers of this library are intelligent enough to do what they intend.
+
+
 <!-- INSTALL/ -->
 
 <h2>Install</h2>
