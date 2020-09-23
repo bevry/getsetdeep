@@ -66,7 +66,7 @@ console.log(getDeep(obj, 'a.b.c')) // 4
 
 ### Security
 
-To satisfy the egos of some security researchers, just as you wouldn't do `obj[prompt('some user input')] = 'value'` don't do `setDeep(prompt('some user input'), 'value')`, [obviously](https://medium.com/intrinsic/javascript-prototype-poisoning-vulnerabilities-in-the-wild-7bc15347c96). Rather than `getsetdeep` preventing `__proto__` access, we assume the consumers of this library are intelligent enough to do what they intend.
+To satisfy the egos of some security researchers, just as you wouldn't do `obj[prompt('some user input')] = 'value'` don't do `setDeep(obj, prompt('some user input'), 'value')`, [obviously](https://medium.com/intrinsic/javascript-prototype-poisoning-vulnerabilities-in-the-wild-7bc15347c96). Rather than `getsetdeep` preventing `__proto__` access, we assume the consumers of this library are intelligent enough to do what they intend.
 
 
 <!-- INSTALL/ -->
