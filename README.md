@@ -35,7 +35,7 @@ Get and set nested variables of an object, includes support for Backbone Models
 
 ## Usage
 
-[Complete API Documentation.](http://master.getsetdeep.bevry.surge.sh/docs/globals.html)
+[Complete API Documentation.](http://master.getsetdeep.bevry.surge.sh/docs/)
 
 ### Example
 
@@ -82,14 +82,14 @@ To satisfy the egos of some security researchers, just as you wouldn't do `obj[p
 <a href="https://deno.land" title="Deno is a secure runtime for JavaScript and TypeScript, it is an alternative for Node.js"><h3>Deno</h3></a>
 
 ``` typescript
-import * as pkg from 'https://unpkg.com/getsetdeep@^4.17.0/edition-deno/index.ts'
+import * as pkg from 'https://unpkg.com/getsetdeep@^4.18.0/edition-deno/index.ts'
 ```
 
 <a href="https://www.skypack.dev" title="Skypack is a JavaScript Delivery Network for modern web apps"><h3>Skypack</h3></a>
 
 ``` html
 <script type="module">
-    import * as pkg from '//cdn.skypack.dev/getsetdeep@^4.17.0'
+    import * as pkg from '//cdn.skypack.dev/getsetdeep@^4.18.0'
 </script>
 ```
 
@@ -97,7 +97,7 @@ import * as pkg from 'https://unpkg.com/getsetdeep@^4.17.0/edition-deno/index.ts
 
 ``` html
 <script type="module">
-    import * as pkg from '//unpkg.com/getsetdeep@^4.17.0'
+    import * as pkg from '//unpkg.com/getsetdeep@^4.18.0'
 </script>
 ```
 
@@ -105,7 +105,7 @@ import * as pkg from 'https://unpkg.com/getsetdeep@^4.17.0/edition-deno/index.ts
 
 ``` html
 <script type="module">
-    import * as pkg from '//dev.jspm.io/getsetdeep@4.17.0'
+    import * as pkg from '//dev.jspm.io/getsetdeep@4.18.0'
 </script>
 ```
 
