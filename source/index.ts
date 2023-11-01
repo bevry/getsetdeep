@@ -21,7 +21,7 @@ interface Model {
 /** Get a nested value within the subject */
 export function getDeep(
 	subject: IndexedObject | Model,
-	keys: string | string[]
+	keys: string | string[],
 ) {
 	// Split keys if they are a string
 	if (typeof keys === 'string') {
@@ -66,7 +66,7 @@ export function setDeep(
 	subject: IndexedObject | Model,
 	keys: string | string[],
 	value: any,
-	opts: SetterOptions = {}
+	opts: SetterOptions = {},
 ): any {
 	// Prepare
 	if (opts.onlyIfEmpty == null) {
