@@ -246,8 +246,8 @@
   "devDependencies": {
     "@types/backbone": "^1.4.18",
     "@types/node": "^20.10.5",
-    "@typescript-eslint/eslint-plugin": "^6.16.0",
-    "@typescript-eslint/parser": "^6.16.0",
+    "@typescript-eslint/eslint-plugin": "^8.56.1",
+    "@typescript-eslint/parser": "^8.56.1",
     "assert-helpers": "^11.12.0",
     "backbone": "^1.5.0",
     "eslint": "^8.56.0",
